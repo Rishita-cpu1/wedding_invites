@@ -82,30 +82,31 @@ const stories = [
 {
 title: "How We Met",
 year: "May 2024",
-image: "assets/meet.jpg",
+image: "assets/meet-temp.jpg",
 description:"Every love story is unique, and ours began with a little help from fate and two determined mothers.What started as a connection through a matrimony portal soon became something far more meaningful. Our mothers discovered each other's profiles, exchanged details about us, and patiently nurtured the possibility of an introduction. Their belief that we might be a good match laid the foundation for everything that followed.hen we finally exchanged numbers, conversations flowed effortlessly. Days turned into weeks, and with every conversation, we found ourselves looking forward to the next. Before long, we met in person and realized that what we were building was something truly specialWhat began as an introduction soon became friendship, friendship became love, and love became the journey that has brought us here today. We are endlessly grateful to our families, whose faith and efforts helped bring our paths together.And now, we look forward to writing the next chapter of our story—together."
 },
 
 {
 title: "First Adventure",
 year: "2025",
-image: "assets/adventure.jpg",
+image: "assets/adventure-temp.jpg",
 description:"Varkala will be always be special because it was our first real adventure together.Learning to surf side by side felt like the perfect beginning to our journey. We spent days battling the waves , celebrating the small victories, and laughing at all our ridiculous falls along the way .When we look back at Varkala, we don't just remember the surfing, but also the experience of doing something new and challenging together.Our first adventure and the first of many incredible memories that we would create together. Here's to chasing many more waves and adventures together"
 },
 
 {
 title: "The Proposal",
 year: "2026",
-image: "assets/proposal.jpg",
+image: "assets/proposal-temp.jpg",
 description:"Our trip to Massai Mara was nothing short of a spectacle. But proposing to my partner beneath the starry skies in a beautiful camp in Kenya was something that I could never have imagined.Although I would say that the proposal was hampered a little by the case of the elusive leopard, which is a different story altogether.Nevertheless, i strove forward with a handwritten letter and a ring expressing my eternal love for my beautiful partner, the answer to which was a resounding 'Yes'.And that was it..our hearts were bound together with love and gratitude forever making it an epic conclusion to our magical trip in Kenya."
 },
 
 {
 title: "Forever Begins",
 year: "2027",
-image: "assets/forever.jpg",
+image: "assets/forever-temp.jpg",
 description:"Now we stand on the edge of our greatest adventure yet. Surrounded by our loved ones, we begin the next chapter of our lives together."
 }
+
 ];
 
 function showStory(index){
