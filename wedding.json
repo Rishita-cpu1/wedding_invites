@@ -1,0 +1,58 @@
+{
+"couple": {
+"bride": "Rishita",
+"groom": "Niloy"
+},
+
+"weddingDate": "6th & 7th February 2027",
+
+"tagline": "A celebration of love and forever.",
+
+"story": "Every great love story begins with a simple hello. What started as a chance meeting became a beautiful journey filled with laughter, adventures and endless memories.",
+
+"venue": {
+"name": "Army Officers Institute, Sangam, Vijay Durg",
+"city": "Kolkata",
+"maps": "https://maps.google.com"
+},
+
+"events": [
+{
+"name": "Mehendi",
+"date": "6th February 2027",
+"time": "11:00 AM",
+"venue": "Kennelworth Hotel, Park Street, Kolkata",
+"meal": "Lunch to follow",
+"description": "The Mehendi ceremony is a vibrant and joyous pre-wedding ritual where intricate henna designs are applied to the bride's hands and feet. The event is filled with music, dance, and laughter as family and friends come together to celebrate this special occasion."
+},
+
+{
+"name": "Sangeet",
+"date": "6th February 2027",
+"time": "7:00 PM",
+"venue": "TA Officer's Mess, Kolkata",
+"meal": "Dinner to follow",
+"description":"Dance the night away with us at our Sangeet ceremony!"
+},
+
+{
+"name": "Gaye Holud/Haldi",
+"date": "7th February 2027",
+"time": "10:00 AM",
+"venue": "Kennelworth Hotel, Park Street, Kolkata",
+"meal": "Lunch to follow",
+"description": "The Gaye Holud, also known as the Haldi ceremony, is a vibrant and auspicious pre-wedding ritual celebrated in Bengali weddings. During this ceremony, turmeric paste is applied to the bride and groom's bodies."
+},
+
+{
+"name": "Wedding",
+"date": "7th February 2027",
+"time": "7:00 PM",
+"venue": "Army Officers Institute, Sangam, Vijay Durg",
+"meal": "Dinner to follow",
+"description": "Join us for our wedding ceremony as we exchange vows and celebrate our love surrounded by family and friends"
+}
+],
+
+"rsvpLink": "https://forms.google.com"
+}
