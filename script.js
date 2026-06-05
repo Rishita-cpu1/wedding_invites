@@ -82,7 +82,7 @@ const stories = [
 {
 title: "How We Met",
 year: "May 2024",
-image: "assets/meet-temp.jpg",
+image: "assets/first-DM .jpg",
 description:"Every love story is unique, and ours began with a little help from fate and two determined mothers.What started as a connection through a matrimony portal soon became something far more meaningful. Our mothers discovered each other's profiles, exchanged details about us, and patiently nurtured the possibility of an introduction. Their belief that we might be a good match laid the foundation for everything that followed.hen we finally exchanged numbers, conversations flowed effortlessly. Days turned into weeks, and with every conversation, we found ourselves looking forward to the next. Before long, we met in person and realized that what we were building was something truly specialWhat began as an introduction soon became friendship, friendship became love, and love became the journey that has brought us here today. We are endlessly grateful to our families, whose faith and efforts helped bring our paths together.And now, we look forward to writing the next chapter of our story—together."
 },
 
