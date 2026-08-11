@@ -91,5 +91,12 @@
   "company": "[Planner Company]",
   "phone": "+91-XXXXXXXXXX",
   "email": "planner@example.com"
-}
+},
+
+"entourage": [
+  { "name": "Anita Roy", "role": "Maid of Honor", "photo": "assets/bride.jpg" },
+  { "name": "Rahul Sen", "role": "Best Man", "photo": "assets/groom.jpg" },
+  { "name": "Priya Das", "role": "Bridesmaid", "photo": "assets/adventure-temp.jpg" },
+  { "name": "Arjun Bose", "role": "Groomsman", "photo": "assets/forever-temp.jpg" }
+]
 }

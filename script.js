@@ -54,6 +54,24 @@ data.rsvpLink;
         });
     }
 
+    // Populate entourage (wedding party)
+    if (data.entourage && Array.isArray(data.entourage)) {
+        const grid = document.querySelector('.entourage-grid');
+        if (grid) {
+            grid.innerHTML = '';
+            data.entourage.forEach(person => {
+                const card = document.createElement('div');
+                card.className = 'entourage-card';
+                card.innerHTML = `
+                    <img src="${person.photo}" alt="${person.name}" style="width:100%;height:220px;object-fit:cover;border-radius:12px;">
+                    <h4 style="margin-top:10px;">${person.name}</h4>
+                    <p style="color:#666;margin-top:6px;">${person.role}</p>
+                `;
+                grid.appendChild(card);
+            });
+        }
+    }
+
     // Print invite button
     const printBtn = document.getElementById('printInvite');
     if (printBtn) {
