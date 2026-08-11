@@ -1,7 +1,9 @@
 {
 "couple": {
 "bride": "Rishita",
-"groom": "Niloy"
+"groom": "Niloy",
+"brideDescription": "A passionate runner and Financial Crime Analyst, Rishita loves exploring new places, meeting people, and collecting stories from every journey. Her adventurous spirit and warm heart make her the perfect partner for any adventure.",
+"groomDescription": "A Merchant Navy officer with a calm and charming personality, Niloy loves travelling the world and getting lost in a good book. His kindness, curiosity, and easygoing nature complement Rishita's vibrant spirit perfectly."
 },
 
 "weddingDate": "6th & 7th February 2027",
@@ -10,10 +12,14 @@
 
 "story": "Every great love story begins with a simple hello. What started as a chance meeting became a beautiful journey filled with laughter, adventures and endless memories.",
 
-"venue": {
-"name": "Army Officers Institute, Sangam, Vijay Durg",
-"city": "Kolkata",
-"maps": "https://maps.google.com"
+"brideSide": {
+"father": "Mr. Tapan Sinha",
+"mother": "Mrs. Anuradha Sinha"
+},
+
+"groomSide": {
+"father": "Mr. Subir Chakravorty",
+"mother": "Mrs. Sumana Chakravorty"
 },
 
 "events": [

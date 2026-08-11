@@ -17,15 +17,6 @@ data.tagline;
 document.getElementById("storyText").innerText =
 data.story;
 
-document.getElementById("venueName").innerText =
-data.venue.name;
-
-document.getElementById("venueCity").innerText =
-data.venue.city;
-
-document.getElementById("mapLink").href =
-data.venue.maps;
-
 document.getElementById("rsvpButton").href =
 data.rsvpLink;
 

@@ -1,224 +1,169 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Wedding Invitation</title>
-
+    <title>Rishita & Niloy | Wedding Celebration</title>
     <link rel="stylesheet" href="style.css">
-
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <span class="brand-mark">R & N</span>
+                <span class="brand-name">Rishita & Niloy</span>
+            </div>
+            <nav class="main-nav">
+                <a href="#story">Our Story</a>
+                <a href="#events">Events</a>
+                <a href="#details">Details</a>
+                <a href="#rsvp">RSVP</a>
+            </nav>
+        </div>
+    </header>
 
     <section class="hero">
-        <div class="overlay">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <span class="hero-label">You are invited</span>
             <h1 id="coupleNames"></h1>
-            <h3 id="weddingDate"></h3>
-            <p id="tagline"></p>
-
-            <a href="#story" class="btn">
-
-                Begin Our Story
-            </a>
+            <p class="hero-date" id="weddingDate"></p>
+            <p class="hero-tagline" id="tagline"></p>
+            <a href="#story" class="btn hero-btn">Begin Our Story</a>
         </div>
     </section>
 
-    <section class="section couple-section">
-        <h2>Two souls ready to celebrate love, family and an unforgettable weekend together.</h2>
-
-        <div class="couple-cards">
-            <div class="couple-card">
-                <div class="couple-image-circle">
-                    <img src="assets/bride.jpg" alt="The Bride">
+    <section class="section about-couple">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Our Hearts</span>
+                <h2>Meet the Couple</h2>
+                <p class="section-intro">Two souls ready to celebrate love, family and an unforgettable weekend together.</p>
+            </div>
+            <div class="couple-briefing">
+                <div class="person-card bride-card">
+                    <div class="person-avatar">
+                        <img id="brideImage" src="assets/bride.jpg" alt="Bride">
+                    </div>
+                    <h3>The Bride</h3>
+                    <p id="brideDescription"></p>
                 </div>
-                <h3>The Bride</h3>
-                <p id="brideDescription">A passionate runner and Financial Crime Analyst, Rishita loves exploring new places, meeting people, and collecting stories from every journey. Her adventurous spirit and warm heart make her the perfect partner for any adventure.</p>
-            </div>
-
-            <div class="couple-card">
-                <div class="couple-image-circle">
-                    <img src="assets/groom.jpg" alt="The Groom">
+                <div class="person-card groom-card">
+                    <div class="person-avatar">
+                        <img id="groomImage" src="assets/groom.jpg" alt="Groom">
+                    </div>
+                    <h3>The Groom</h3>
+                    <p id="groomDescription"></p>
                 </div>
-                <h3>The Groom</h3>
-                <p id="groomDescription">A Merchant Navy officer with a calm and charming personality, Niloy loves travelling the world and getting lost in a good book. His kindness, curiosity, and easygoing nature complement Rishita's vibrant spirit perfectly.</p>
             </div>
         </div>
     </section>
 
-    <section id="story" class="section">
-
-        <h2>Our Journey</h2>
-
-        <div class="journey-line">
-
-            <div class="journey-item active" onclick="showStory(0)">
-                <div class="circle"></div>
-                <h3>How We Met</h3>
+    <section id="story" class="section story-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Our Journey</span>
+                <h2>From first hello to forever</h2>
+                <p class="section-intro" id="storySummary"></p>
             </div>
-
-            <div class="journey-item" onclick="showStory(1)">
-                <div class="circle"></div>
-                <h3>First Adventure</h3>
+            <div class="journey-line">
+                <div class="journey-item active" onclick="showStory(0)">
+                    <div class="circle"></div>
+                    <h3>How We Met</h3>
+                </div>
+                <div class="journey-item" onclick="showStory(1)">
+                    <div class="circle"></div>
+                    <h3>First Adventure</h3>
+                </div>
+                <div class="journey-item" onclick="showStory(2)">
+                    <div class="circle"></div>
+                    <h3>The Proposal</h3>
+                </div>
+                <div class="journey-item" onclick="showStory(3)">
+                    <div class="circle"></div>
+                    <h3>Forever Begins</h3>
+                </div>
             </div>
-
-            <div class="journey-item" onclick="showStory(2)">
-                <div class="circle"></div>
-                <h3>The Proposal</h3>
+            <div id="storyCard" class="story-card">
+                <img id="storyImage" src="assets/first-DM .jpg" alt="Our story">
+                <div class="story-copy">
+                    <h3 id="storyTitle">How We Met</h3>
+                    <p id="storyYear">May 2024</p>
+                    <p id="storyDescription"></p>
+                </div>
             </div>
-
-            <div class="journey-item" onclick="showStory(3)">
-                <div class="circle"></div>
-                <h3>Forever Begins</h3>
-            </div>
-
         </div>
-
-        <div id="storyCard" class="story-card">
-
-            <img id="storyImage"
-                src="assets/first-DM .jpg"
-                alt="Story Image">
-
-            <h3 id="storyTitle">
-                How We Met
-            </h3>
-
-            <p id="storyYear">
-                May 2024
-            </p>
-
-            <p id="storyDescription">
-                Every love story is unique, and ours began with a little help from fate and two determined mothers.
-What started as a connection through a matrimony portal soon became something far more meaningful. Our mothers discovered each other's profiles, exchanged details about us, and patiently nurtured the possibility of an introduction. Their belief that we might be a good match laid the foundation for everything that followed.
-When we finally exchanged numbers, conversations flowed effortlessly. Days turned into weeks, and with every conversation, we found ourselves looking forward to the next. Before long, we met in person and realized that what we were building was something truly special.
-What began as an introduction soon became friendship, friendship became love, and love became the journey that has brought us here today. We are endlessly grateful to our families, whose faith and efforts helped bring our paths together.
-And now, we look forward to writing the next chapter of our story—together.
-            </p>
-
-        </div>
-
     </section>
 
-
-    <section class="section">
-        <h2>Countdown To Forever</h2>
-
-        <div class="countdown">
-
-            <div class="count-box">
-                <span id="days">0</span>
-                <p>Days</p>
+    <section id="details" class="section details-section">
+        <div class="container details-grid">
+            <div class="detail-card">
+                <span class="detail-label">Wedding Weekend</span>
+                <h3>February 6 &amp; 7, 2027</h3>
+                <p>We can't wait to celebrate with you across meaningful rituals, elegant evenings, and joyous moments.</p>
             </div>
-
-            <div class="count-box">
-                <span id="hours">0</span>
-                <p>Hours</p>
-            </div>
-
-            <div class="count-box">
-                <span id="minutes">0</span>
-                <p>Minutes</p>
-            </div>
-
-            <div class="count-box">
-                <span id="seconds">0</span>
-                <p>Seconds</p>
-            </div>
-
         </div>
-
     </section>
 
-    <section id="events" class="section">
-
-        <h2>Wedding Celebrations</h2>
-
-        <div class="event-tabs">
-
-            <div class="event-tab active"
-                onclick="showEvent(0)">
-                Mehendi
-
+    <section id="events" class="section events-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Celebrations</span>
+                <h2>Wedding Events</h2>
+                <p class="section-intro">Every moment is crafted for joy — from henna and music to vibrant rituals and a grand evening.</p>
             </div>
-
-            <div class="event-tab"
-                onclick="showEvent(1)">
-                Sangeet
+            <div class="event-tabs">
+                <div class="event-tab active" onclick="showEvent(0)">Mehendi</div>
+                <div class="event-tab" onclick="showEvent(1)">Sangeet</div>
+                <div class="event-tab" onclick="showEvent(2)">Gaye Holud</div>
+                <div class="event-tab" onclick="showEvent(3)">Wedding</div>
             </div>
-
-            <div class="event-tab"
-                onclick="showEvent(2)">
-                Gaye Holud
+            <div id="eventCard" class="event-card">
+                <h3 id="eventTitle">Mehendi</h3>
+                <p id="eventDate"></p>
+                <p id="eventTime"></p>
+                <p id="eventVenue"></p>
+                <p id="eventMeal"></p>
+                <p id="eventDescription"></p>
+                <a id="eventMap" target="_blank" class="btn btn-sm" style="display:none;">View Location</a>
             </div>
-
-            <div class="event-tab"
-                onclick="showEvent(3)">
-                Wedding
-            </div>
-
         </div>
-
-        <div id="eventCard" class="event-card">
-            <h3 id="eventTitle">Mehendi</h3>
-            <p id="eventDate"></p>
-            <p id="eventTime"></p>
-            <p id="eventVenue"></p>
-            <p id="eventMeal"></p>
-            <p id="eventDescription"></p>
-
-            <a id="eventMap"
-                target="_blank"
-                class="location-btn">
-                View Location
-            </a>  
-
-        </div>
-
     </section>
 
-
-    <section class="section">
-
-        <h2>Venue</h2>
-
-        <div class="venue-card">
-
-            <h3 id="venueName"></h3>
-
-            <p id="venueCity"></p>
-
-            <a id="mapLink" target="_blank" class="btn">
-
-                View Map
-
-            </a>
-
+    <section class="section family-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Family</span>
+                <h2>Our Loving Families</h2>
+                <p class="section-intro">We bring our families together to celebrate the love that joined us.</p>
+            </div>
+            <div class="family-grid">
+                <div class="family-card">
+                    <h3>Bride's Side</h3>
+                    <p><strong>Father:</strong> <span id="brideFather"></span></p>
+                    <p><strong>Mother:</strong> <span id="brideMother"></span></p>
+                </div>
+                <div class="family-card">
+                    <h3>Groom's Side</h3>
+                    <p><strong>Father:</strong> <span id="groomFather"></span></p>
+                    <p><strong>Mother:</strong> <span id="groomMother"></span></p>
+                </div>
+            </div>
         </div>
-
     </section>
 
-    <section class="section">
-
-        <h2>Celebrate With Us</h2>
-
-        <a id="rsvpButton" target="_blank" class="btn">
-
-            RSVP
-
-        </a>
-
+    <section id="rsvp" class="section rsvp-section">
+        <div class="container">
+            <h2>Celebrate With Us</h2>
+            <p>Please let us know if you can join for our special weekend.</p>
+            <div class="rsvp-box">
+                <p>Share your attendance, meal preferences, and any message for the couple.</p>
+                <a id="rsvpButton" target="_blank" class="btn btn-lg">RSVP Now</a>
+            </div>
+        </div>
     </section>
 
     <script src="script.js"></script>
-
 </body>
-
 </html>
