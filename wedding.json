@@ -60,5 +60,36 @@
 }
 ],
 
-"rsvpLink": "https://forms.google.com"
+"rsvpLink": "https://forms.google.com",
+
+"gallery": [
+  "assets/bride.jpg",
+  "assets/groom.jpg",
+  "assets/first-DM .jpg",
+  "assets/adventure-temp.jpg",
+  "assets/proposal-temp.jpg",
+  "assets/forever-temp.jpg"
+],
+
+"accommodations": [
+  {
+    "name": "Kennelworth Hotel",
+    "address": "Park Street, Kolkata",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Kennelworth+Hotel+Park+Street+Kolkata",
+    "notes": "Approx 20 mins from the wedding venue."
+  },
+  {
+    "name": "ITI Guest House",
+    "address": "Central Avenue, Kolkata",
+    "maps": "https://www.google.com/maps/search/?api=1&query=ITI+Guest+House+Kolkata",
+    "notes": "Comfortable and budget friendly."
+  }
+],
+
+"planner": {
+  "name": "[Planner Name]",
+  "company": "[Planner Company]",
+  "phone": "+91-XXXXXXXXXX",
+  "email": "planner@example.com"
+}
 }

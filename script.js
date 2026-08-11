@@ -20,6 +20,46 @@ data.story;
 document.getElementById("rsvpButton").href =
 data.rsvpLink;
 
+    // Populate gallery
+    if (data.gallery && Array.isArray(data.gallery)) {
+        const galleryGrid = document.getElementById('galleryGrid');
+        galleryGrid.innerHTML = '';
+        data.gallery.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Gallery image';
+            img.className = 'gallery-thumb';
+            img.loading = 'lazy';
+            img.addEventListener('click', () => openLightbox(src));
+            galleryGrid.appendChild(img);
+        });
+    }
+
+    // Populate accommodations
+    if (data.accommodations && Array.isArray(data.accommodations)) {
+        const acc = document.getElementById('accommodations');
+        acc.innerHTML = '';
+        data.accommodations.forEach(h => {
+            const card = document.createElement('div');
+            card.className = 'accommodation-card';
+            card.innerHTML = `
+                <h4>${h.name}</h4>
+                <p>${h.address}</p>
+                <p class="notes">${h.notes}</p>
+                <div style="margin-top:10px;display:flex;gap:8px;">
+                    <a class="btn btn-sm" href="${h.maps}" target="_blank">Open on Map</a>
+                </div>
+            `;
+            acc.appendChild(card);
+        });
+    }
+
+    // Print invite button
+    const printBtn = document.getElementById('printInvite');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => window.print());
+    }
+
 const container =
 document.getElementById("eventsContainer");
 
@@ -101,6 +141,8 @@ description:"Now we stand on the edge of our greatest adventure yet. Surrounded 
 ];
 
 function showStory(index){
+    // smooth fade-in when switching
+
 
     const card = document.getElementById("storyCard");
 
@@ -132,8 +174,32 @@ function showStory(index){
 }
 
 function showEvent(index){
+    // generate ICS content for calendar download
+}
+
+function buildIcs(event) {
+    // naive ICS builder — uses event.date string and time; assumes local timezone
+    // best-effort: attempt to parse a start datetime from event.date + event.time
+    const start = new Date(`${event.date} ${event.time}`);
+    const end = new Date(start.getTime() + (2 * 60 * 60 * 1000)); // default 2-hour duration
+    function fmt(d) {
+        return d.toISOString().replace(/[-:.]/g, '').split('Z')[0] + 'Z';
+    }
+    return `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//WeddingInvite//EN\nBEGIN:VEVENT\nUID:${Date.now()}@wedding\nDTSTAMP:${fmt(new Date())}\nDTSTART:${fmt(start)}\nDTEND:${fmt(end)}\nSUMMARY:${event.name}\nDESCRIPTION:${event.description}\nLOCATION:${event.venue}\nEND:VEVENT\nEND:VCALENDAR`;
+}
+
+function openLightbox(src) {
+    // simple lightbox: create overlay, image, and close on click
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = `<img src="${src}" class="lightbox-image" alt="" />`;
+    overlay.addEventListener('click', () => document.body.removeChild(overlay));
+    document.body.appendChild(overlay);
+}
+
 
     const event = events[index];
+    if (!event) return;
 
     document.getElementById("eventTitle").innerText =
     event.name;
@@ -153,10 +219,28 @@ function showEvent(index){
     document.getElementById("eventDescription").innerText =
     event.description;
 
-    /*
-    document.getElementById("eventMap").href =
-    event.map;
-    */
+    // event map link (if provided) and ICS generation for calendar
+    const eventMapEl = document.getElementById('eventMap');
+    const eventIcsEl = document.getElementById('eventIcs');
+    if (event.map) {
+        eventMapEl.href = event.map;
+        eventMapEl.style.display = '';
+    } else {
+        // if no explicit event.map, create google search link
+        eventMapEl.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(event.venue)}`;
+        eventMapEl.style.display = '';
+    }
+
+    if (event.date && event.time) {
+        const ics = buildIcs(event);
+        const blob = new Blob([ics], { type: 'text/calendar' });
+        const url = URL.createObjectURL(blob);
+        eventIcsEl.href = url;
+        eventIcsEl.download = `${event.name.replace(/\s+/g,'-')}.ics`;
+        eventIcsEl.style.display = '';
+    } else {
+        eventIcsEl.style.display = 'none';
+    }
 
     document
     .querySelectorAll(".event-tab")

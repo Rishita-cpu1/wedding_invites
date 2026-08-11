@@ -126,7 +126,36 @@
                 <p id="eventVenue"></p>
                 <p id="eventMeal"></p>
                 <p id="eventDescription"></p>
-                <a id="eventMap" target="_blank" class="btn btn-sm" style="display:none;">View Location</a>
+                <div class="event-actions" style="margin-top:18px; display:flex; gap:12px; justify-content:center;">
+                    <a id="eventMap" target="_blank" class="btn btn-sm" style="display:none;">View Location</a>
+                    <a id="eventIcs" class="btn btn-sm" style="display:none;">Add to Calendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section gallery-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Moments</span>
+                <h2>Photo Gallery</h2>
+                <p class="section-intro">A few captured moments — click to enlarge.</p>
+            </div>
+            <div id="galleryGrid" class="gallery-grid">
+                <!-- gallery images populated by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <section class="section travel-section">
+        <div class="container">
+            <div class="section-header center">
+                <span class="section-label">Travel & Accommodation</span>
+                <h2>Where to stay & how to get there</h2>
+                <p class="section-intro">Recommended hotels and transport notes for visiting guests.</p>
+            </div>
+            <div id="accommodations" class="accommodations-grid">
+                <!-- accommodations populated by script.js -->
             </div>
         </div>
     </section>
@@ -154,6 +183,9 @@
     </section>
 
     <section id="rsvp" class="section rsvp-section">
+        <div class="container" style="text-align:center; margin-bottom:30px;">
+            <button id="printInvite" class="btn">Print Invitation</button>
+        </div>
         <div class="container">
             <h2>Celebrate With Us</h2>
             <p>Please let us know if you can join for our special weekend.</p>
