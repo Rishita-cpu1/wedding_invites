@@ -2,8 +2,10 @@ fetch("wedding.json")
 .then(response => response.json())
 .then(data => {
 
-window.events = data.events;
-showEvent(0);
+window.events = data.events || [];
+if (window.events.length) {
+    showEvent(0);
+}
 
 document.getElementById("coupleNames").innerText =
 `${data.couple.bride} & ${data.couple.groom}`;
@@ -14,42 +16,86 @@ data.weddingDate;
 document.getElementById("tagline").innerText =
 data.tagline;
 
-document.getElementById("storyText").innerText =
-data.story;
-
-document.getElementById("venueName").innerText =
-data.venue.name;
-
-document.getElementById("venueCity").innerText =
-data.venue.city;
-
-document.getElementById("mapLink").href =
-data.venue.maps;
+window.weddingVenueMap = data.venue.maps;
 
 document.getElementById("rsvpButton").href =
 data.rsvpLink;
 
-const container =
-document.getElementById("eventsContainer");
+if (data.family) {
+    renderFamily(data.family.brideSide, "brideFamilyList");
+    renderFamily(data.family.groomSide, "groomFamilyList");
+}
 
-data.events.forEach(event => {
+if (data.entourage) {
+    renderEntourage(data.entourage.maidOfHonor, "maidOfHonorGrid", "Maid of Honor");
+    renderEntourage(data.entourage.bridesmaids, "bridesmaidsGrid", "Bridesmaid");
+    renderEntourage(data.entourage.groomsmen, "groomsmenGrid", "Groomsman");
+}
 
-const card =
-document.createElement("div");
+})
+.catch(err => console.error('Failed to load wedding.json', err));
 
-card.classList.add("event-card");
+function renderFamily(members, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
 
-card.innerHTML = `
-<h3>${event.name}</h3>
-<p>${event.date}</p>
-<p>${event.time}</p>
-`;
+    container.innerHTML = "";
 
-container.appendChild(card);
+    (members || []).forEach(member => {
+        const row = document.createElement("div");
+        row.className = "family-row";
 
-});
+        const relation = document.createElement("div");
+        relation.className = "family-relation";
+        relation.textContent = member.relation || "";
 
-});
+        const name = document.createElement("div");
+        name.className = "family-name";
+        name.textContent = member.name || "";
+
+        row.appendChild(relation);
+        row.appendChild(name);
+        container.appendChild(row);
+    });
+}
+
+function renderEntourage(people, containerId, roleLabel) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    (people || []).forEach(person => {
+        const wrap = document.createElement("div");
+        wrap.className = "entourage-person";
+
+        const photoBox = document.createElement("div");
+        photoBox.className = "entourage-photo" + (person.photo ? "" : " placeholder");
+
+        if (person.photo) {
+            const img = document.createElement("img");
+            img.src = person.photo;
+            img.alt = person.name || roleLabel;
+            photoBox.appendChild(img);
+        } else {
+            photoBox.innerHTML =
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0112 5a5.5 5.5 0 019.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg>';
+        }
+
+        const nameEl = document.createElement("div");
+        nameEl.className = "entourage-name";
+        nameEl.textContent = person.name || "";
+
+        const roleEl = document.createElement("div");
+        roleEl.className = "entourage-role";
+        roleEl.textContent = roleLabel;
+
+        wrap.appendChild(photoBox);
+        wrap.appendChild(nameEl);
+        wrap.appendChild(roleEl);
+        container.appendChild(wrap);
+    });
+}
 
 const weddingDate = new Date("February 6, 2027 00:00:00");
 
@@ -162,10 +208,8 @@ function showEvent(index){
     document.getElementById("eventDescription").innerText =
     event.description;
 
-    /*
     document.getElementById("eventMap").href =
-    event.map;
-    */
+    event.map || (window.weddingVenueMap || "#");
 
     document
     .querySelectorAll(".event-tab")
@@ -175,4 +219,36 @@ function showEvent(index){
     .querySelectorAll(".event-tab")[index]
     .classList.add("active");
 }
+
+// Mobile navigation toggle
+const navToggle = document.getElementById("navToggle");
+const siteNav = document.getElementById("siteNav");
+
+if (navToggle && siteNav) {
+    navToggle.addEventListener("click", () => {
+        const isOpen = siteNav.classList.toggle("open");
+        navToggle.classList.toggle("open", isOpen);
+        navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    siteNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            siteNav.classList.remove("open");
+            navToggle.classList.remove("open");
+            navToggle.setAttribute("aria-expanded", "false");
+        });
+    });
+}
+
+// Reveal sections gently as they scroll into view
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
 

@@ -18,7 +18,29 @@
 
 <body>
 
+    <header>
+        <div class="logo">R & N</div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="siteNav">
+            <a href="#couple">Our Story</a>
+            <a href="#story">Journey</a>
+            <a href="#events">Events</a>
+            <a href="#family">Family</a>
+            <a href="#entourage">Entourage</a>
+            <a href="#rsvp">RSVP</a>
+        </nav>
+    </header>
+
     <section class="hero">
+        <div class="hero-petals" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p class="hero-kicker">Together With Their Families</p>
+
         <div class="overlay">
             <h1 id="coupleNames"></h1>
             <h3 id="weddingDate"></h3>
@@ -29,9 +51,15 @@
                 Begin Our Story
             </a>
         </div>
+
+        <div class="hero-monogram">R&nbsp;&amp;&nbsp;N</div>
+
+        <a href="#couple" class="scroll-cue" aria-label="Scroll down">
+            <span></span>
+        </a>
     </section>
 
-    <section class="section couple-section">
+    <section id="couple" class="section couple-section reveal">
         <h2>Two souls ready to celebrate love, family and an unforgettable weekend together.</h2>
 
         <div class="couple-cards">
@@ -53,7 +81,7 @@
         </div>
     </section>
 
-    <section id="story" class="section">
+    <section id="story" class="section reveal">
 
         <h2>Our Journey</h2>
 
@@ -108,7 +136,7 @@ And now, we look forward to writing the next chapter of our story—together.
     </section>
 
 
-    <section class="section">
+    <section class="section reveal">
         <h2>Countdown To Forever</h2>
 
         <div class="countdown">
@@ -137,7 +165,7 @@ And now, we look forward to writing the next chapter of our story—together.
 
     </section>
 
-    <section id="events" class="section">
+    <section id="events" class="section reveal">
 
         <h2>Wedding Celebrations</h2>
 
@@ -185,37 +213,67 @@ And now, we look forward to writing the next chapter of our story—together.
     </section>
 
 
-    <section class="section">
+    <section id="family" class="section reveal">
 
-        <h2>Venue</h2>
+        <h2>Our Loving Family</h2>
 
-        <div class="venue-card">
+        <div class="family-cards">
 
-            <h3 id="venueName"></h3>
+            <div class="family-card">
+                <h3>Bride's Family</h3>
+                <div class="family-list" id="brideFamilyList"></div>
+            </div>
 
-            <p id="venueCity"></p>
-
-            <a id="mapLink" target="_blank" class="btn">
-
-                View Map
-
-            </a>
+            <div class="family-card">
+                <h3>Groom's Family</h3>
+                <div class="family-list" id="groomFamilyList"></div>
+            </div>
 
         </div>
 
     </section>
 
-    <section class="section">
+    <section id="entourage" class="section reveal">
+
+        <h2>The Entourage</h2>
+
+        <h3 class="entourage-subtitle">Maid of Honor</h3>
+        <div class="entourage-grid" id="maidOfHonorGrid"></div>
+
+        <h3 class="entourage-subtitle">Bridesmaids</h3>
+        <div class="entourage-grid" id="bridesmaidsGrid"></div>
+
+        <h3 class="entourage-subtitle">Groomsmen</h3>
+        <div class="entourage-grid" id="groomsmenGrid"></div>
+
+    </section>
+
+    <section id="rsvp" class="section reveal">
 
         <h2>Celebrate With Us</h2>
 
+        <p style="max-width:600px; margin:0 auto 40px; font-size:1.1rem; color:#666; line-height:1.8;">
+            Join us for a celebration filled with joy, love, and cherished moments. We'd be honored to have you there.
+        </p>
+
         <a id="rsvpButton" target="_blank" class="btn">
 
-            RSVP
+            RSVP Now
 
         </a>
 
     </section>
+
+    <footer>
+        <div class="footer-content">
+            <h3 style="font-family:'Cormorant Garamond', serif; font-size:2rem; margin-bottom:20px;">Rishita & Niloy</h3>
+            <div class="footer-divider"></div>
+            <p>February 6-7, 2027 • Kolkata, India</p>
+            <p style="margin-top:15px; opacity:0.7; font-size:0.9rem;">With love and gratitude for your presence in our lives</p>
+            <div class="footer-divider" style="margin:25px 0;"></div>
+            <p style="font-size:0.85rem; opacity:0.6;">© 2026 A Celebration of Love. All moments are precious.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 

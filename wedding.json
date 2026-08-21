@@ -23,7 +23,8 @@
 "time": "11:00 AM",
 "venue": "Kennelworth Hotel, Park Street, Kolkata",
 "meal": "Lunch to follow",
-"description": "The Mehendi ceremony is a vibrant and joyous pre-wedding ritual where intricate henna designs are applied to the bride's hands and feet. The event is filled with music, dance, and laughter as family and friends come together to celebrate this special occasion."
+"description": "The Mehendi ceremony is a vibrant and joyous pre-wedding ritual where intricate henna designs are applied to the bride's hands and feet. The event is filled with music, dance, and laughter as family and friends come together to celebrate this special occasion.",
+"map": "https://www.google.com/maps/search/?api=1&query=Kennelworth+Hotel+Park+Street+Kolkata"
 },
 
 {
@@ -32,7 +33,8 @@
 "time": "7:00 PM",
 "venue": "TA Officer's Mess, Kolkata",
 "meal": "Dinner to follow",
-"description":"Dance the night away with us at our Sangeet ceremony!"
+"description":"Dance the night away with us at our Sangeet ceremony!",
+"map": "https://www.google.com/maps/search/?api=1&query=TA+Officer%27s+Mess+Kolkata"
 },
 
 {
@@ -41,7 +43,8 @@
 "time": "10:00 AM",
 "venue": "Kennelworth Hotel, Park Street, Kolkata",
 "meal": "Lunch to follow",
-"description": "The Gaye Holud, also known as the Haldi ceremony, is a vibrant and auspicious pre-wedding ritual celebrated in Bengali weddings. During this ceremony, turmeric paste is applied to the bride and groom's bodies."
+"description": "The Gaye Holud, also known as the Haldi ceremony, is a vibrant and auspicious pre-wedding ritual celebrated in Bengali weddings. During this ceremony, turmeric paste is applied to the bride and groom's bodies.",
+"map": "https://www.google.com/maps/search/?api=1&query=Kennelworth+Hotel+Park+Street+Kolkata"
 },
 
 {
@@ -50,9 +53,42 @@
 "time": "7:00 PM",
 "venue": "Army Officers Institute, Sangam, Vijay Durg",
 "meal": "Dinner to follow",
-"description": "Join us for our wedding ceremony as we exchange vows and celebrate our love surrounded by family and friends"
+"description": "Join us for our wedding ceremony as we exchange vows and celebrate our love surrounded by family and friends",
+"map": "https://www.google.com/maps/search/?api=1&query=Army+Officers+Institute+Sangam+Vijay+Durg"
 }
 ],
 
-"rsvpLink": "https://forms.google.com"
+"rsvpLink": "https://forms.google.com",
+
+"family": {
+"brideSide": [
+{ "relation": "Father", "name": "Tapan Sinha" },
+{ "relation": "Mother", "name": "Anuradha Sinha" },
+{ "relation": "Brother", "name": "Archisman Sinha" },
+{ "relation": "Brother", "name": "Ayushman Sinha" }
+],
+"groomSide": [
+{ "relation": "Father", "name": "Subir Chakravarti" },
+{ "relation": "Mother", "name": "Sumana Chakravarti" },
+{ "relation": "Brother", "name": "Ninaad Chakravarti" }
+]
+},
+
+"entourage": {
+"maidOfHonor": [
+{ "name": "", "photo": "" },
+{ "name": "", "photo": "" }
+],
+"bridesmaids": [
+{ "name": "", "photo": "" },
+{ "name": "", "photo": "" },
+{ "name": "", "photo": "" },
+{ "name": "", "photo": "" }
+],
+"groomsmen": [
+{ "name": "", "photo": "" },
+{ "name": "", "photo": "" },
+{ "name": "", "photo": "" }
+]
+}
 }
